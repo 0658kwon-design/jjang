@@ -39,11 +39,14 @@ h2{font-size:27px;color:var(--navy);margin:0 0 16px}
 .one b{display:block;font-size:clamp(22px,6vw,30px);line-height:1.2}
 .note{font-size:14px;opacity:.85}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.pk:first-child{grid-column:1/-1;border:2px solid var(--pink)}
 .pk{display:flex;gap:6px;flex-direction:column;padding:12px;font-size:15px;line-height:1.4}.pk i{font-style:normal;font-size:30px}.pk b{display:block;color:var(--navy)}
 .step{display:flex;gap:14px;align-items:center}
 .num{flex:none;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:900}
 .gal #gimg{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block;margin:12px 0 6px}
 .thumbs{display:flex;gap:6px}.thumbs img{width:25%;aspect-ratio:1;object-fit:cover;border-radius:10px;cursor:pointer}
+.come{background:var(--pink);color:#fff;border-radius:12px;padding:12px 14px;margin:10px 0;line-height:1.4}.come .kw{display:block;font-size:clamp(24px,7vw,34px);font-weight:900;margin-bottom:2px}
+h3{font-size:19px;color:var(--navy);margin:18px 0 6px}
 footer{text-align:center;font-size:13px;opacity:.7;padding:20px}
 </style>
 </head>
@@ -69,46 +72,46 @@ const USD_NOTE_EN="USD prices are approximate and provided for reference only. A
 const L={
 ko:{n:"한국어",h:"ko",ap:"",ttl:"짱탁구 남포비프광장점 | 부산 24시간 무인 탁구장 30분 {p}부터",dsc:"부산 남포동 BIFF광장 인근 24시간 무인 탁구장. 30분 {p}부터. 무료 Wi-Fi·휴대전화 충전.",
  nav:["이용요금","시설·장점","이용방법","유의사항","위치"],sub:"부산 남포동 BIFF광장 스타벅스 건물 6층, 24시간 무인 탁구장",
- hl:["24시간 운영","셀프 서비스 탁구장","30분 {p}부터","부산 BIFF광장 인근"],c1:"이용 요금 보기",c2:"위치 보기",
+ hl:["24시간 운영","셀프 서비스 탁구장","30분 {p}부터","부산 BIFF광장 인근"],kw:"준비물 NO!",come:"신발·라켓·공 모두 준비 완료! 즐겁게 칠 마음만 가져오세요.",c1:"이용 요금 보기",c2:"위치 보기",
  pT:"이용 요금",min:"분",robot:"로봇 탁구 연습",per:"1인당",one:"인원이 늘어도 요금은 그대로!",oneSub:"탁구대 1대 기준 요금이에요. 친구, 가족과 함께 마음껏 즐기세요!",sep:"※ 로봇 연습은 탁구대 요금과 별도입니다.",usd:"",
- kT:"시설과 장점",pk:[["24시간 운영","언제든 방문하세요"],["합리적인 요금","30분 {p}부터"],["무료 Wi-Fi","무료로 이용하세요"],["무료 휴대전화 충전","운동 중 충전하세요"],["음료자판기 · 휴식","쉬면서 음료를 즐기세요"],["로봇 탁구 연습","혼자서도 즐길 수 있어요 · {r}"]],
- gT:"이용방법",st:["매장에 방문합니다.","매장 내 이용 안내를 확인합니다.","원하는 이용 시간에 맞춰 요금을 결제합니다.","탁구를 즐깁니다.","이용 후 주변을 정리합니다."],pay:"결제 방법은 매장 내 안내를 따라 주세요.",
- rT:"이용 유의사항",ru:["탁구 장비를 소중하게 사용해 주세요.","이용 공간을 깨끗하게 유지해 주세요.","다른 이용객을 배려해 주세요.","현장 안내사항을 지켜 주세요."],
+ kT:"시설과 장점",pk:[["24시간 운영","언제든 방문하세요"],["합리적인 요금","30분 {p}부터"],["무료 Wi-Fi","무료로 이용하세요"],["무료 휴대전화 충전","운동 중 충전하세요"],["음료자판기 · 휴식","쉬면서 음료를 즐기세요"],["로봇 탁구 연습","혼자서도 즐길 수 있어요 · {r}"],["신발 · 라켓 · 공 구비","준비된 장비로 바로 즐기세요"]],
+ gT:"이용방법",tg:"탁구대 이용",st:["<b>빈 탁구대</b>를 고르세요. 신발, 라켓, 공이 모두 준비되어 있어요.","<b>결제 키오스크</b>에서 이용 시간(30·60·90·120분)을 선택하세요. 회원가입 없이 <b>비회원으로 바로 시작</b>할 수 있어요.","<b>카드</b>는 금액 선택 → 확인 → 결제 순서로 진행하세요. <b>현금</b>도 가능하지만 거스름돈이 나오지 않아요. (1만원 = 45분)","시간이 끝날 때까지 마음껏 즐기세요! 인원이 늘어도 요금은 그대로예요.","끝나면 라켓과 공을 제자리에 정리하고, 쓰레기는 쓰레기통에 버려 주세요."],rg:"로봇 탁구 연습",rs:["제어판의 <b>모드 스위치</b>를 <b>게임</b> 또는 <b>연습</b>에 맞추세요. 결제 후에는 모드를 바꿀 수 없어요.","<b>현금 또는 카드</b>로 결제하세요.","<b>게임 모드</b>: 노란 <b>LEVEL(단계)</b> 버튼으로 1~5단계를 고르고 빨간 <b>START(시작)</b> 버튼을 누르세요. 누르지 않아도 10초 후 자동 시작돼요.","<b>연습 모드</b>: 공의 <b>방향(좌/우)</b>과 <b>볼 간격</b>을 조절하세요. 연습 중 고정/랜덤 변경이 가능해요. 그 외 버튼은 만지지 마세요."],rn:"게임 모드는 총 3세트, 약 4~6분이며 고득점이면 보너스 게임이 주어져요. 연습 모드는 약 6분이에요.",dg:"음료 구매 (무인 편의점)",ds:["키오스크 화면에서 음료를 고르고 <b>카드</b>로 결제하세요.","냉장고가 열리면 음료를 꺼내고 문을 닫아 주세요. 한 번 닫으면 다시 열리지 않으니 <b>한 번에</b> 꺼내세요."],tel:"문의·고장 신고",
+ rT:"이용 유의사항",ru:["모든 구역은 금연이에요.","쓰레기는 쓰레기통에 버려 주세요.","떨어진 탁구공은 바로 주워 주세요.","사용한 라켓과 공은 제자리에 정리해 주세요.","매장 물건(라켓, 공 등)은 가져가지 마세요.","소지품을 꼭 챙겨 주세요.","다른 이용객을 배려해 주세요. 모든 구역에서 CCTV가 24시간 촬영 중이에요."],
  lT:"위치",ll:["부산 남포동","BIFF광장 인근","스타벅스 건물 6층"],map:"지도 보기",mapNo:"지도 링크 준비 중"},
 en:{n:"English",h:"en",ap:"Approx. ",ttl:"JJANG TABLE TENNIS Nampo BIFF Square | 24h Table Tennis in Busan, 30 min from {p}",dsc:"24-hour self-service table tennis near BIFF Square, Nampo-dong, Busan. 30 minutes from {p}. Free Wi-Fi & phone charging.",
  nav:["Prices","Facilities","How to Use","Rules","Location"],sub:"24-hour unmanned table tennis hall in the Starbucks building at BIFF Square, Nampo-dong, Busan",
- hl:["24 HOURS OPEN","SELF-SERVICE TABLE TENNIS","30 MINUTES FROM {p}","NEAR BIFF SQUARE, BUSAN"],c1:"See prices",c2:"Find us",
+ hl:["24 HOURS OPEN","SELF-SERVICE TABLE TENNIS","30 MINUTES FROM {p}","NEAR BIFF SQUARE, BUSAN"],kw:"BRING NOTHING!",come:"Shoes, rackets and balls are all provided. Bring a fun-loving spirit!",c1:"See prices",c2:"Find us",
  pT:"Prices",min:"MINUTES",robot:"ROBOT TABLE TENNIS",per:"per person",one:"ONE TABLE, ONE PRICE!",oneSub:"Play together! The table rental price does not increase with the number of players.",sep:"Robot practice is charged separately from the table price.",usd:USD_NOTE_EN,
- kT:"Facilities & Highlights",pk:[["Open 24 Hours","Come anytime, day or night"],["Affordable Prices","From {p} for 30 minutes"],["Free Wi-Fi","Stay connected while you play"],["Free Phone Charging","Charge up between games"],["Rest Area & Drink Vending Machine","Take a break and grab a drink"],["Robot Table Tennis Practice","Fun even if you come alone · {r}"]],
- gT:"How to Use",st:["Come to the store.","Check the instructions in the store.","Pay for the play time you want.","Enjoy table tennis!","Tidy up the area after you play."],pay:"Please follow the in-store instructions for payment.",
- rT:"Rules",ru:["Handle the equipment with care.","Keep the space clean.","Be considerate of other players.","Follow the on-site instructions."],
+ kT:"Facilities & Highlights",pk:[["Open 24 Hours","Come anytime, day or night"],["Affordable Prices","From {p} for 30 minutes"],["Free Wi-Fi","Stay connected while you play"],["Free Phone Charging","Charge up between games"],["Rest Area & Drink Vending Machine","Take a break and grab a drink"],["Robot Table Tennis Practice","Fun even if you come alone · {r}"],["Shoes, Rackets & Balls Ready","Use the equipment provided and start playing"]],
+ gT:"How to Use",tg:"Playing on a Table",st:["Pick an <b>available table</b>. Shoes, rackets and balls are all provided.","At the <b>payment kiosk</b>, choose your time (30 / 60 / 90 / 120 min). No sign-up needed: just start as a <b>non-member</b>.","<b>Card:</b> select amount → confirm → pay. <b>Cash</b> also works, but no change is given. (₩10,000 = 45 min)","Play until your time is up! The price stays the same no matter how many people play.","When you finish, put the rackets and balls back and throw trash in the bin."],rg:"Robot Table Tennis Practice",rs:["Turn the <b>mode switch</b> on the control panel to <b>Game</b> or <b>Practice</b>. You cannot change the mode after paying.","Pay by <b>cash or card</b>.","<b>Game mode:</b> press the yellow <b>LEVEL</b> button to choose level 1–5, then press the red <b>START</b> button. It starts automatically after 10 seconds.","<b>Practice mode:</b> set the ball <b>direction (left/right)</b> and <b>ball interval</b>. You can switch between fixed and random. Please do not touch other buttons."],rn:"Game mode: 3 sets, about 4–6 minutes, with a bonus game for high scores. Practice mode: about 6 minutes.",dg:"Buying a Drink (Unmanned Store)",ds:["Choose a drink on the kiosk screen and pay by <b>card</b>.","When the fridge door unlocks, take your drink and close the door. It will not reopen, so take everything <b>at once</b>."],tel:"Questions / problems",
+ rT:"Rules",ru:["No smoking anywhere in the store.","Throw trash in the bin.","Pick up fallen balls right away.","Put used rackets and balls back in place.","Do not take store items (rackets, balls, etc.) with you.","Keep your belongings with you.","Be considerate of others. CCTV records all areas 24 hours."],
  lT:"Location",ll:["Busan, Nampo-dong","Near BIFF Square","Starbucks building, 6F"],map:"Open map",mapNo:"Map link coming soon"},
 ja:{n:"日本語",h:"ja",ap:"約",ttl:"JJANG TABLE TENNIS 南浦BIFF広場店｜釜山の24時間卓球場 30分{p}から",dsc:"釜山・南浦洞 BIFF広場近くの24時間セルフ卓球場。30分{p}から。無料Wi-Fi・スマホ充電あり。",
  nav:["料金","設備・特長","ご利用方法","注意事項","アクセス"],sub:"釜山・南浦洞 BIFF広場 スターバックスのビル6階にある24時間無人卓球場",
- hl:["24時間営業","セルフサービス卓球","30分{p}から","釜山 BIFF広場近く"],c1:"料金を見る",c2:"場所を見る",
+ hl:["24時間営業","セルフサービス卓球","30分{p}から","釜山 BIFF広場近く"],kw:"持ち物ゼロ！",come:"シューズ・ラケット・ボールは全部用意済み。楽しむ気持ちだけ持ってきてください！",c1:"料金を見る",c2:"場所を見る",
  pT:"ご利用料金",min:"分",robot:"ロボット卓球練習",per:"1人あたり",one:"卓球台1台、料金は1つ！",oneSub:"みんなで楽しめます！人数が増えても卓球台の利用料金は変わりません。",sep:"ロボット練習は卓球台とは別料金です。",usd:"米ドル表示は参考価格です。お支払いは韓国ウォン（KRW）となります。",
- kT:"設備と特長",pk:[["24時間営業","いつでもお越しください"],["お手頃な料金","30分{p}から"],["無料Wi-Fi","無料でご利用いただけます"],["スマホ無料充電","プレーの合間に充電できます"],["休憩スペース・飲料自販機","ひと休みしてドリンクをどうぞ"],["ロボット卓球練習","お一人でも楽しめます · {r}"]],
- gT:"ご利用方法",st:["お店に来る。","店内の利用案内を確認する。","ご希望の時間分の料金を支払う。","卓球を楽しむ。","利用後は周りを片付ける。"],pay:"お支払い方法は店内の案内に従ってください。",
- rT:"ご利用上の注意",ru:["卓球用具は大切に使いましょう。","利用スペースをきれいに保ちましょう。","他のお客様への配慮をお願いします。","現地の案内に従ってください。"],
+ kT:"設備と特長",pk:[["24時間営業","いつでもお越しください"],["お手頃な料金","30分{p}から"],["無料Wi-Fi","無料でご利用いただけます"],["スマホ無料充電","プレーの合間に充電できます"],["休憩スペース・飲料自販機","ひと休みしてドリンクをどうぞ"],["ロボット卓球練習","お一人でも楽しめます · {r}"],["シューズ・ラケット・ボール完備","用意された用具ですぐ楽しめます"]],
+ gT:"ご利用方法",tg:"卓球台の使い方",st:["<b>空いている卓球台</b>を選びます。シューズ、ラケット、ボールはすべて用意されています。","<b>決済キオスク</b>で利用時間（30・60・90・120分）を選びます。会員登録は不要で、<b>非会員のままそのまま始められます</b>。","<b>カード</b>は金額選択→確認→決済の順に進めます。<b>現金</b>も使えますが、お釣りは出ません。（1万ウォン＝45分）","時間いっぱい楽しんでください！人数が増えても料金は同じです。","終わったらラケットとボールを元の場所に戻し、ゴミはゴミ箱へ。"],rg:"ロボット卓球練習",rs:["操作パネルの<b>モードスイッチ</b>を<b>ゲーム</b>または<b>練習</b>に合わせます。支払い後はモードを変更できません。","<b>現金またはカード</b>で支払います。","<b>ゲームモード</b>：黄色の<b>LEVEL（段階）</b>ボタンで1〜5段階を選び、赤い<b>START（スタート）</b>ボタンを押します。押さなくても10秒後に自動で始まります。","<b>練習モード</b>：ボールの<b>方向（左／右）</b>と<b>ボール間隔</b>を調整します。練習中は固定／ランダムを切り替えられます。それ以外のボタンには触れないでください。"],rn:"ゲームモードは全3セットで約4〜6分、高得点でボーナスゲームがあります。練習モードは約6分です。",dg:"ドリンクの買い方（無人コンビニ）",ds:["キオスク画面でドリンクを選び、<b>カード</b>で支払います。","冷蔵庫が開いたらドリンクを取り出し、ドアを閉めます。一度閉めると開かないので、<b>一度に</b>取り出してください。"],tel:"お問い合わせ・故障",
+ rT:"ご利用上の注意",ru:["店内は全面禁煙です。","ゴミはゴミ箱に捨ててください。","落ちたボールはすぐに拾ってください。","使ったラケットとボールは元の場所に戻してください。","店内の物（ラケット、ボールなど）は持ち帰らないでください。","忘れ物にご注意ください。","他のお客様への配慮をお願いします。全エリアでCCTVが24時間録画しています。"],
  lT:"アクセス",ll:["釜山 南浦洞","BIFF広場近く","スターバックスのビル6階"],map:"地図を見る",mapNo:"地図リンク準備中"},
 "zh-Hans":{n:"简体中文",h:"zh-Hans",ap:"约",ttl:"JJANG TABLE TENNIS 南浦BIFF广场店｜釜山24小时乒乓球馆 30分钟{p}起",dsc:"釜山南浦洞BIFF广场附近的24小时自助乒乓球馆。30分钟{p}起，免费Wi-Fi和手机充电。",
  nav:["价格","设施特色","使用方法","注意事项","位置"],sub:"位于釜山南浦洞BIFF广场星巴克大楼6层的24小时无人乒乓球馆",
- hl:["24小时营业","自助式乒乓球","30分钟{p}起","釜山BIFF广场附近"],c1:"查看价格",c2:"查看位置",
+ hl:["24小时营业","自助式乒乓球","30分钟{p}起","釜山BIFF广场附近"],kw:"无需准备任何东西！",come:"球鞋、球拍、乒乓球全部备齐。带上愉快的心情就好！",c1:"查看价格",c2:"查看位置",
  pT:"使用价格",min:"分钟",robot:"机器人乒乓球陪练",per:"每人",one:"一张球台，一个价格！",oneSub:"一起来玩吧！球台使用费不会因人数增加而上涨。",sep:"机器人陪练与球台费用分开计费。",usd:"美元价格仅供参考，实际付款请使用韩元（KRW）。",
- kT:"设施与特色",pk:[["24小时营业","随时欢迎光临"],["价格实惠","30分钟{p}起"],["免费Wi-Fi","畅享免费网络"],["免费手机充电","打球间隙可充电"],["休息区与饮料自动售货机","歇一歇，喝杯饮料"],["机器人乒乓球陪练","一个人也能玩 · {r}"]],
- gT:"使用方法",st:["来到店里。","查看店内使用说明。","按所需时长付款。","尽情打球！","使用后请整理周边。"],pay:"付款方式请按店内指引操作。",
- rT:"注意事项",ru:["请爱护乒乓球器材。","请保持场地整洁。","请体谅其他顾客。","请遵守现场指引。"],
+ kT:"设施与特色",pk:[["24小时营业","随时欢迎光临"],["价格实惠","30分钟{p}起"],["免费Wi-Fi","畅享免费网络"],["免费手机充电","打球间隙可充电"],["休息区与饮料自动售货机","歇一歇，喝杯饮料"],["机器人乒乓球陪练","一个人也能玩 · {r}"],["球鞋、球拍、乒乓球齐全","使用现成器材，马上开打"]],
+ gT:"使用方法",tg:"球台使用",st:["选择<b>空闲的球台</b>。球鞋、球拍和乒乓球均已备好。","在<b>付款机（Kiosk）</b>选择使用时长（30/60/90/120分钟）。无需注册，<b>非会员可直接开始</b>。","<b>刷卡：</b>选择金额→确认→付款。也可用<b>现金</b>，但不找零。（1万韩元＝45分钟）","时间到之前尽情畅玩！人数再多，价格也不变。","结束后请把球拍和球放回原处，垃圾丢进垃圾桶。"],rg:"机器人乒乓球陪练",rs:["把控制面板上的<b>模式旋钮</b>转到<b>游戏</b>或<b>练习</b>。付款后无法更换模式。","用<b>现金或银行卡</b>付款。","<b>游戏模式：</b>按黄色<b>LEVEL（难度）</b>键选择1–5级，再按红色<b>START（开始）</b>键。不按的话10秒后自动开始。","<b>练习模式：</b>调整来球<b>方向（左/右）</b>和<b>球间隔</b>，练习中可切换固定/随机。请勿触碰其他按钮。"],rn:"游戏模式共3局，约4–6分钟，高分可获得奖励局。练习模式约6分钟。",dg:"购买饮料（无人便利店）",ds:["在屏幕上选择饮料，用<b>银行卡</b>付款。","冰箱门打开后取出饮料并关上门。关上后无法再次打开，请<b>一次取完</b>。"],tel:"咨询 / 故障报修",
+ rT:"注意事项",ru:["店内全区域禁止吸烟。","垃圾请丢进垃圾桶。","掉落的乒乓球请立即捡起。","用过的球拍和球请放回原处。","请勿带走店内物品（球拍、乒乓球等）。","请保管好随身物品。","请体谅其他顾客。所有区域24小时有CCTV监控录像。"],
  lT:"位置",ll:["釜山 南浦洞","BIFF广场附近","星巴克大楼6层"],map:"查看地图",mapNo:"地图链接准备中"},
 vi:{n:"Tiếng Việt",h:"vi",ap:"Khoảng ",ttl:"JJANG TABLE TENNIS Nampo BIFF Square | Bóng bàn 24/7 tại Busan, 30 phút từ {p}",dsc:"Phòng bóng bàn tự phục vụ mở cửa 24 giờ gần Quảng trường BIFF, Nampo-dong, Busan. 30 phút chỉ từ {p}. Wi-Fi và sạc điện thoại miễn phí.",
  nav:["Giá","Tiện ích","Cách dùng","Lưu ý","Vị trí"],sub:"Phòng bóng bàn tự phục vụ 24 giờ, tầng 6 tòa nhà Starbucks gần Quảng trường BIFF, Nampo-dong, Busan",
- hl:["MỞ CỬA 24 GIỜ","BÓNG BÀN TỰ PHỤC VỤ","30 PHÚT CHỈ TỪ {p}","GẦN QUẢNG TRƯỜNG BIFF, BUSAN"],c1:"Xem giá",c2:"Xem vị trí",
+ hl:["MỞ CỬA 24 GIỜ","BÓNG BÀN TỰ PHỤC VỤ","30 PHÚT CHỈ TỪ {p}","GẦN QUẢNG TRƯỜNG BIFF, BUSAN"],kw:"Không cần mang gì!",come:"Giày, vợt và bóng đều có sẵn. Chỉ cần mang theo tinh thần vui vẻ!",c1:"Xem giá",c2:"Xem vị trí",
  pT:"Bảng giá",min:"phút",robot:"Luyện tập với máy bóng bàn",per:"mỗi người",one:"MỘT BÀN, MỘT GIÁ!",oneSub:"Chơi cùng nhau nhé! Giá thuê bàn không tăng theo số người chơi.",sep:"Máy luyện tập được tính phí riêng, tách biệt với giá thuê bàn.",usd:"Giá bằng đô la Mỹ (USD) chỉ mang tính tham khảo. Mọi khoản thanh toán đều được thực hiện bằng đồng won Hàn Quốc (KRW).",
- kT:"Tiện ích & điểm nổi bật",pk:[["Mở cửa 24 giờ","Đến chơi bất cứ lúc nào"],["Giá hợp lý","30 phút chỉ từ {p}"],["Wi-Fi miễn phí","Kết nối thoải mái khi chơi"],["Sạc điện thoại miễn phí","Sạc pin giữa các hiệp"],["Khu nghỉ ngơi & máy bán nước tự động","Nghỉ ngơi và uống nước giải khát"],["Luyện tập với máy bóng bàn","Đến một mình cũng chơi được · {r}"]],
- gT:"Cách sử dụng",st:["Đến cửa hàng.","Xem hướng dẫn sử dụng trong cửa hàng.","Thanh toán theo thời gian chơi bạn muốn.","Chơi bóng bàn thật vui!","Dọn dẹp khu vực sau khi chơi."],pay:"Vui lòng làm theo hướng dẫn thanh toán tại cửa hàng.",
- rT:"Lưu ý khi sử dụng",ru:["Vui lòng giữ gìn dụng cụ bóng bàn.","Vui lòng giữ khu vực chơi sạch sẽ.","Vui lòng tôn trọng những người chơi khác.","Vui lòng làm theo hướng dẫn tại chỗ."],
+ kT:"Tiện ích & điểm nổi bật",pk:[["Mở cửa 24 giờ","Đến chơi bất cứ lúc nào"],["Giá hợp lý","30 phút chỉ từ {p}"],["Wi-Fi miễn phí","Kết nối thoải mái khi chơi"],["Sạc điện thoại miễn phí","Sạc pin giữa các hiệp"],["Khu nghỉ ngơi & máy bán nước tự động","Nghỉ ngơi và uống nước giải khát"],["Luyện tập với máy bóng bàn","Đến một mình cũng chơi được · {r}"],["Có sẵn giày, vợt và bóng","Dùng dụng cụ có sẵn và chơi ngay"]],
+ gT:"Cách sử dụng",tg:"Chơi trên bàn bóng bàn",st:["Chọn một <b>bàn còn trống</b>. Giày, vợt và bóng đều đã có sẵn.","Tại <b>máy thanh toán (kiosk)</b>, chọn thời gian chơi (30 / 60 / 90 / 120 phút). Không cần đăng ký, bạn có thể <b>bắt đầu ngay với tư cách khách vãng lai</b>.","<b>Thẻ:</b> chọn số tiền → xác nhận → thanh toán. <b>Tiền mặt</b> cũng được, nhưng máy không trả tiền thừa. (10.000 won = 45 phút)","Chơi thoải mái đến hết giờ! Giá không đổi dù có bao nhiêu người chơi.","Chơi xong, hãy đặt vợt và bóng về chỗ cũ và bỏ rác vào thùng."],rg:"Luyện tập với máy bóng bàn",rs:["Xoay <b>núm chọn chế độ</b> trên bảng điều khiển sang <b>Game</b> hoặc <b>Luyện tập</b>. Sau khi thanh toán không thể đổi chế độ.","Thanh toán bằng <b>tiền mặt hoặc thẻ</b>.","<b>Chế độ Game:</b> nhấn nút vàng <b>LEVEL</b> để chọn cấp 1–5, rồi nhấn nút đỏ <b>START</b>. Nếu không nhấn, máy tự bắt đầu sau 10 giây.","<b>Chế độ Luyện tập:</b> chỉnh <b>hướng bóng (trái/phải)</b> và <b>khoảng cách giữa các quả bóng</b>. Có thể chuyển giữa bóng cố định và ngẫu nhiên. Vui lòng không chạm vào các nút khác."],rn:"Chế độ Game gồm 3 set, khoảng 4–6 phút, điểm cao sẽ được thêm ván thưởng. Chế độ Luyện tập khoảng 6 phút.",dg:"Mua đồ uống (cửa hàng tự động)",ds:["Chọn đồ uống trên màn hình kiosk và thanh toán bằng <b>thẻ</b>.","Khi tủ lạnh mở, lấy đồ uống rồi đóng cửa. Đóng rồi sẽ không mở lại được, nên hãy lấy <b>một lần</b> cho đủ."],tel:"Hỏi đáp / báo sự cố",
+ rT:"Lưu ý khi sử dụng",ru:["Cấm hút thuốc trong toàn bộ cửa hàng.","Vui lòng bỏ rác vào thùng.","Nhặt bóng rơi ngay.","Đặt vợt và bóng đã dùng về chỗ cũ.","Không mang đồ trong cửa hàng (vợt, bóng...) về.","Nhớ mang theo đồ cá nhân.","Hãy tôn trọng người khác. Camera CCTV ghi hình mọi khu vực 24 giờ."],
  lT:"Vị trí",ll:["Busan, Nampo-dong","Gần Quảng trường BIFF","Tòa nhà Starbucks, tầng 6"],map:"Xem bản đồ",mapNo:"Liên kết bản đồ sắp có"}
 };
-const IDS=["price","perks","guide","rules","location"],IC=["🕐","💰","📶","🔋","🛋️","🤖"];
+const IDS=["price","perks","guide","rules","location"],IC=["🕐","💰","📶","🔋","🛋️","🤖","👟"];
 let rate=CONFIG.krwPerUsd,live=false,lang="en";
 const nl=(navigator.language||"en").toLowerCase();
 lang=nl.startsWith("ko")?"ko":nl.startsWith("ja")?"ja":nl.startsWith("zh")?"zh-Hans":nl.startsWith("vi")?"vi":"en";
@@ -116,6 +119,7 @@ try{const s=localStorage.getItem("lang");if(s&&L[s])lang=s}catch(e){}
 const won=n=>"₩"+n.toLocaleString("en-US");
 function fill(s){return s.replace(/\{p\}/g,won(CONFIG.prices[0][1])).replace(/\{r\}/g,won(CONFIG.robotPrice))}
 function fillU(s,t){const u=k=>lang==="ko"?won(k):`${won(k)} (${t.ap}US$${(k/rate).toFixed(2)})`;return s.replace(/\{p\}/g,u(CONFIG.prices[0][1])).replace(/\{r\}/g,u(CONFIG.robotPrice))}
+function steps(a){return a.map((x,i)=>`<div class="card step"><div class="num">${i+1}</div><div>${x}</div></div>`).join("")}
 function usd(t,k){return lang==="ko"?"":`<em>${t.ap}US$${(k/rate).toFixed(2)}</em>`}
 function hero(){return `<div class="gal"><img id="gimg" src="${PHOTOS[0]}" alt="JJANG TABLE TENNIS"><div class="thumbs">`+PHOTOS.map(p=>`<img src="${p}" alt="" onclick="document.getElementById('gimg').src=this.src">`).join("")+`</div></div>`}
 function render(){
@@ -126,17 +130,17 @@ function render(){
  const mapBtn=CONFIG.mapUrl?`<a class="btn alt" href="${CONFIG.mapUrl}" target="_blank" rel="noopener">${t.map}</a>`:`<span class="note">${t.mapNo}</span>`;
  const rows=CONFIG.prices.map(([m,p])=>`<div class="card price"><span>${m} ${t.min}</span><b>${won(p)}${usd(t,p)}</b></div>`).join("");
  const robot=`<div class="card price"><span>🤖 ${t.robot}</span><b>${won(CONFIG.robotPrice)}${usd(t,CONFIG.robotPrice)}</b></div>`;
- const perks=[5,0,1,2,3,4].map(i=>t.pk[i]).map((k,j)=>`<div class="card pk"><i>${IC[[5,0,1,2,3,4][j]]}</i><div><b>${k[0]}</b>${fillU(k[1],t)}</div></div>`).join("");
+ const perks=[5,6,0,1,2,3,4].map(i=>t.pk[i]).map((k,j)=>`<div class="card pk"><i>${IC[[5,6,0,1,2,3,4][j]]}</i><div><b>${k[0]}</b>${fillU(k[1],t)}</div></div>`).join("");
  const note=lang==="ko"?"":`<p class="note">${t.usd} (1 USD ≈ ₩${Math.round(rate).toLocaleString("en-US")}${live?"":" *"})</p>`;
  document.getElementById("main").innerHTML=`
- <section id="home"><div class="slogan">PLAY · ENJOY · REPEAT</div><h1>JJANG TABLE TENNIS<small>NAMPO BIFF SQUARE</small></h1><p>${t.sub}</p><div class="grid" id="perks" style="margin-top:16px">${perks}</div>
+ <section id="home"><div class="slogan">PLAY · ENJOY · REPEAT</div><h1>JJANG TABLE TENNIS<small>NAMPO BIFF SQUARE</small></h1><p>${t.sub}</p><p class="come"><span class="kw">🎒 ${t.kw}</span>${t.come}</p><div class="grid" id="perks" style="margin-top:16px">${perks}</div>
   <div class="chips">${t.hl.map(h=>`<div class="chip">${fill(h)}</div>`).join("")}</div>
   <div class="btns"><a class="btn" href="#price">${t.c1}</a><a class="btn alt" href="#location">${t.c2}</a></div>${hero()}</section>
  <section id="price"><h2>${t.pT}</h2>${robot}<div class="one"><b>${t.one}</b>${t.oneSub}</div>${rows}${note}</section>
  
- <section id="guide"><h2>${t.gT}</h2>${t.st.map((s,i)=>`<div class="card step"><div class="num">${i+1}</div><div>${s}</div></div>`).join("")}<p class="note">${t.pay}</p></section>
+ <section id="guide"><h2>${t.gT}</h2><h3>🏓 ${t.tg}</h3>${steps(t.st)}<h3>🤖 ${t.rg}</h3>${steps(t.rs)}<p class="note">${t.rn}</p><h3>🥤 ${t.dg}</h3>${steps(t.ds)}</section>
  <section id="rules"><h2>${t.rT}</h2>${t.ru.map(r=>`<div class="card">✔ ${r}</div>`).join("")}</section>
- <section id="location" style="border:0"><h2>${t.lT}</h2><div class="card">${t.ll.map(l=>`<div><b>📍 ${l}</b></div>`).join("")}<div style="margin-top:12px">${mapBtn}</div></div></section>`;
+ <section id="location" style="border:0"><h2>${t.lT}</h2><div class="card">${t.ll.map(l=>`<div><b>📍 ${l}</b></div>`).join("")}<div style="margin-top:10px">☎ ${t.tel}: <a href="tel:0507-1304-8581">0507-1304-8581</a></div><div style="margin-top:12px">${mapBtn}</div></div></section>`;
 }
 function setLang(k){lang=k;try{localStorage.setItem("lang",k)}catch(e){}render()}
 render();
